@@ -83,6 +83,7 @@ module RailsParam
         return param if (param.is_a?(ActionController::Parameters) && type == Hash rescue false)
         return Integer(param) if type == Integer
         return Float(param) if type == Float
+        return param.to_sym if type == Symbol
         return String(param) if type == String
         return Date.parse(param) if type == Date
         return Time.parse(param) if type == Time

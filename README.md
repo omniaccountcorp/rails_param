@@ -56,6 +56,7 @@ end
 By declaring parameter types, incoming parameters will automatically be transformed into an object of that type. For instance, if a param is `:boolean`, values of `'1'`, `'true'`, `'t'`, `'yes'`, and `'y'` will be automatically transformed into `true`.  `BigDecimal` defaults to a precision of 14, but this can but changed by passing in the optional `precision:` argument. Any `$` and `,` are automatically stripped when converting to `BigDecimal`.
 
 - `String`
+- `Symbol`
 - `Integer`
 - `Float`
 - `:boolean/TrueClass/FalseClass` _("1/0", "true/false", "t/f", "yes/no", "y/n")_

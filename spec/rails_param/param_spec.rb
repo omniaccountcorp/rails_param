@@ -59,6 +59,12 @@ describe RailsParam::Param do
         expect(controller.params["foo"]).to eql("bar")
       end
 
+      it "converts to Symbol" do
+        allow(controller).to receive(:params).and_return({"foo" => 'bar'})
+        controller.param! :foo, Symbol
+        expect(controller.params["foo"]).to eql(:bar)
+      end
+
       it "converts to Integer" do
         allow(controller).to receive(:params).and_return({"foo" => "42"})
         controller.param! :foo, Integer
