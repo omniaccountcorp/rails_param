@@ -4,7 +4,7 @@ module RailsParam
     DEFAULT_PRECISION = 14
 
     class InvalidParameterError < StandardError
-      attr_accessor :param, :options
+      attr_accessor :param, :options, :type
     end
 
     class MockController
@@ -41,6 +41,7 @@ module RailsParam
       rescue InvalidParameterError => exception
         exception.param ||= name
         exception.options ||= options
+        exception.type ||= type
         raise exception
       end
     end
